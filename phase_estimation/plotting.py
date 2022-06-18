@@ -10,13 +10,13 @@ def tuple_to_string1(tup):
     return str(tup)
 
 
-def dictionary_sorter(given_dict, rank = 6):
+def dictionary_sorter(given_dict, rank=6):
     """
     Sorts the Backend counts dictionary by value, its possible to only output the  
     most common measurement results by specifying the rank parameter.
     """
 
-    sorted_values = sorted(given_dict.values(), reverse = True)
+    sorted_values = sorted(given_dict.values(), reverse=True)
     sorted_dict = {}
 
     for i in sorted_values[:rank]:
@@ -30,10 +30,11 @@ def dictionary_sorter(given_dict, rank = 6):
 def plot_results(result, rank, title):
     """
     Produces a bar chart for some input results basis states vs counts.
-     Also takes a rank parameter r to show only show the r most common measurement results.
+    Also takes a rank parameter r to show only show the r most common measurement results.
     """
     sorted_experimental_results = dictionary_sorter(result.get_counts(), rank)
     sorted_result_keys = sorted_experimental_results.keys()
+    print(len(list(sorted_result_keys)))
     sorted_basis_states = list(map(tuple_to_string1, sorted_result_keys))
     sorted_count_values = list(sorted_experimental_results.values())
     fig = plt.figure()
@@ -41,7 +42,7 @@ def plot_results(result, rank, title):
     ax.bar(
         sorted_basis_states,
         sorted_count_values,
-        color = ["orange"] * len(sorted_count_values),
+        color=["green"] + (["orange"] * (len(sorted_count_values) - 1)),
     )
     ax.set_title(title)
     plt.show()
