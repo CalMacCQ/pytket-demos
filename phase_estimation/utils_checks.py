@@ -2,9 +2,9 @@ import numpy as np
 
 
 # build matrix for QFT to compare with get_unitary() for circuit (Sanity check)
-def qft_unitary(n_qubits):
+def qft_unitary(n_qubits: int):
     """
-    Unitary matrix for the Quantum Fourier transform.
+    Returns the unitary matrix for the n qubit Quantum Fourier transform.
     """
     N = 2 ** n_qubits
     list_of_rows = []
@@ -17,8 +17,8 @@ def qft_unitary(n_qubits):
     return qft_mat
 
 
-def qft_unitary_dag(n_qubits):
+def qft_unitary_dag(n_qubits: int):
     """
-    Unitary matrix for the Inverse Quantum Fourier Transform.
+    Returns the unitary matrix for the n qubit Inverse Quantum Fourier Transform.
     """
     return qft_unitary(n_qubits).conj().T

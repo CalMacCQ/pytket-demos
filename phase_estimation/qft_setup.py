@@ -1,7 +1,7 @@
 from pytket import Circuit, OpType
 
 
-def qft_layer(n_qubits, target=0):
+def qft_layer(n_qubits: int, target=0):
     """
     Creates one layer of the Quantum Fourier Transform (QFT)
     """
@@ -20,7 +20,7 @@ def qft_layer(n_qubits, target=0):
             return circ
 
 
-def swap_circ(n_qubits):
+def swap_circ(n_qubits: int):
     """
     Creates a swap circuit to append to the QFT circuit.
     """
@@ -32,7 +32,7 @@ def swap_circ(n_qubits):
     return scirc
 
 
-def build_qft(n_qubits):
+def build_qft(n_qubits: int):
     """
     Builds the circuit for the Quantum Fourier Transform 
     """
@@ -44,7 +44,7 @@ def build_qft(n_qubits):
     return qft_circ
 
 
-def build_inverse_qft(n_qubits):
+def build_inverse_qft(n_qubits: int):
     """
     Creates the circuit for the inverse QFT.
     """
