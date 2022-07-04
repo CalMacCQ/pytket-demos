@@ -1,16 +1,17 @@
 import matplotlib.pyplot as plt
+from typing import Optional
 
 plt.style.use(["science", "notebook", "grid"])
 
 
-def tuple_to_string1(tup: tuple):
+def tuple_to_string1(tup: tuple) -> str: 
     """
     Converts a Tuple to a string as follows (1,0,0) -> "(1,0,0)"
     """
     return str(tup)
 
 
-def dictionary_sorter(given_dict: dict, rank=6):
+def dictionary_sorter(given_dict: dict, rank=6) -> dict: 
     """
     Sorts the Backend counts dictionary by value, its possible to only output the  
     most common measurement results by specifying the rank parameter.
@@ -27,7 +28,7 @@ def dictionary_sorter(given_dict: dict, rank=6):
     return sorted_dict
 
 
-def plot_results(result, rank: int, title: str, n_shots=1000, save_png=False, optimisation=False):
+def plot_results(result, rank: int, title:str, n_shots=1000, save_png=False, optimisation=False):
     """
     Produces a bar chart for some input results basis states vs counts.
     Also takes a rank parameter r to show only show the r most common measurement results.
